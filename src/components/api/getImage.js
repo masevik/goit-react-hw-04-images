@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://pixabay.com/pi/';
+axios.defaults.baseURL = 'https://pixabay.com/api/';
 
 export async function fetchImages(query, page = 1) {
   const params = {
