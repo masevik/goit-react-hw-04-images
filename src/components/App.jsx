@@ -4,8 +4,8 @@ import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
 import { fetchImages } from './api/getImage';
 import { Button } from './Button';
-import { toast } from 'react-toastify';
 import { Loader } from './Loader';
+import { errorMessage } from './ErrorMessage';
 
 export const App = () => {
   const [query, setQuery] = useState('');
@@ -33,18 +33,6 @@ export const App = () => {
 
     getImages();
   }, [query, page]);
-
-  const errorMessage = () =>
-    toast.error('Something went wrong. Please try again', {
-      position: 'top-right',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: 'light',
-    });
 
   const onSubmitSearch = value => {
     setQuery(value);
